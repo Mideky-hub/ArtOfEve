@@ -52,7 +52,7 @@ public:
 	virtual bool isDateTimeValid(Date date, Time time) const noexcept = 0;
 };
 
-class TimeManager {
+class TimeManager : public ITimeManager {
 private:
 	Time time;
 	Date date;

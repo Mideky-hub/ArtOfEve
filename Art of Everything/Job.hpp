@@ -10,7 +10,7 @@ enum JobType {
 	Contract
 };
 
-enum Hierachical_position {
+enum Hierarchical_position {
 	Employee,
 	Manager,
 	Executive,
@@ -29,15 +29,15 @@ struct Skill {
 };
 
 struct Hierarchy {
-	Hierachical_position position;
-	std::vector<Hierarchy*> subordinates;
+	Hierarchical_position position;
+	std::vector<Hierarchy*> superiors;
 
 	Hierarchy() = default;
-	Hierarchy(const Hierarchy& hierarchy) : position(hierarchy.position), subordinates(hierarchy.subordinates) {}
-	Hierarchy(Hierachical_position position) : position(position) {
-		this->subordinates = std::vector<Hierarchy*>();
+	Hierarchy(const Hierarchy& hierarchy) : position(hierarchy.position), superiors(hierarchy.superiors) {}
+	Hierarchy(Hierarchical_position position) : position(position) {
+		this->superiors = std::vector<Hierarchy*>();
 	}
-	Hierarchy(Hierachical_position& position, std::vector<Hierarchy*> subordinates) : position(position), subordinates(subordinates) {}
+	Hierarchy(Hierarchical_position position, std::vector<Hierarchy*> superiors) : position(position), superiors(superiors) {}
 	~Hierarchy() {}
 };
 
@@ -104,15 +104,6 @@ public:
 	virtual Hierarchy get_hierarchy() const noexcept override { return this->hierarchy; }
 	virtual uint64_t get_salary() const noexcept override { return this->salary; }
 	virtual uint64_t get_yoe() const noexcept override { return this->years_of_experience; }
-
-
-	bool operator==(const Job& job) const noexcept {
-		return this->name == job.name && this->description == job.description && this->r_skills == job.r_skills;
-	}
-
-	bool operator!=(const Job& job) const noexcept {
-		return !operator==(job);
-	}
 };
 
 
