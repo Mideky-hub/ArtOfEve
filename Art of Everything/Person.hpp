@@ -1,8 +1,12 @@
 #ifndef PERSON_HPP
 #define PERSON_HPP
 
+#include <memory>
 #include <string>
 #include <sstream>
+#include <unordered_map>
+#include <vector>
+
 #include "Time.hpp"
 #include "Job.hpp"
 
@@ -44,7 +48,72 @@ struct Name {
 
 __interface IPerson {
 public:
-	
+
+};
+
+enum class RelationType
+{
+	CoWorker,
+	Friend,
+	Classmate,
+	Roommate,
+	Neighbor,
+	Girlfriend,
+	Boyfriend,
+	Partner,
+	Fiance,
+	SpouseToBe,
+	ExSpouse,
+	ExGirlfriend,
+	ExBoyfriend,
+	ExPartner,
+	ExFiance,
+	Knows,
+	Superior,
+	Subordinate,
+	ExSpouseToBe,
+	Parent,
+	Child,
+	Spouse,
+	Grandparent,
+	Grandchild,
+	Sibling,
+	Cousin,
+	Aunt,
+	Uncle,
+	Nephew,
+	Niece,
+	StepParent,
+	StepChild,
+	StepSibling,
+	StepGrandparent,
+	StepGrandchild,
+	StepCousin,
+	StepAunt,
+	StepUncle,
+	StepNephew,
+	StepNiece,
+	AdoptiveParent,
+	AdoptiveChild,
+	AdoptiveSibling,
+	AdoptiveGrandparent,
+	AdoptiveGrandchild,
+	AdoptiveCousin,
+	AdoptiveAunt,
+	AdoptiveUncle,
+	AdoptiveNephew,
+	AdoptiveNiece,
+	AdoptiveStepParent,
+	AdoptiveStepChild,
+	AdoptiveStepSibling,
+	AdoptiveStepGrandparent,
+	AdoptiveStepGrandchild,
+	AdoptiveStepCousin,
+	AdoptiveStepAunt,
+	AdoptiveStepUncle,
+	AdoptiveStepNephew,
+	AdoptiveStepNiece,
+	Other
 };
 
 class Person : public IPerson {
@@ -54,6 +123,7 @@ private:
 	int age;
 	std::vector<Job*> jobs;
 	const Social_Security_Number ssn;
+	std::unordered_map<std::shared_ptr<Person>, std::vector<RelationType>> relations;
 };
 
 #endif // !PERSON_HPP
