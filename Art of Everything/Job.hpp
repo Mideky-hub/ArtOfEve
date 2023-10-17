@@ -72,10 +72,10 @@ public:
 	}
 
 	Job() = default;
-	Job(const Job& job)
-		: name(job.name), description(job.description), r_skills(job.r_skills),
-		type(job.type), hierarchy(job.hierarchy), salary(job.salary),
-		years_of_experience(job.years_of_experience) {
+	Job(const Job&& job)
+		: name(std::move(job.name)), description(std::move(job.description)), r_skills(std::move(job.r_skills)),
+		type(std::move(job.type)), hierarchy(std::move(job.hierarchy)), salary(std::move(job.salary)),
+		years_of_experience(std::move(job.years_of_experience)) {
 		try {
 			isJobValid(*this);
 		}
