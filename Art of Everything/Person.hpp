@@ -38,11 +38,12 @@ struct Social_Security_Number : public ISocial_Security_Number {
 
 struct Name {
 	const std::string name;
+	const std::vector<std::string> middle_names;
 	const std::string surname;
 
 	Name() = default;
 	Name(const Name& name) : name(name.name), surname(name.surname) {}
-	Name(const std::string name, const std::string surname) : name(name), surname(surname) {}
+	Name(const std::string name, const std::vector<std::string> middle_names, const std::string surname) : name(name), middle_names(middle_names), surname(surname) {}
 	~Name() {}
 };
 
