@@ -4,6 +4,6 @@
 
 int main(void)
 {
-	
+	Person p("John", "Doe", 20);
 	return 0;
 }

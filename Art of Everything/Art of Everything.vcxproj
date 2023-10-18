@@ -137,8 +137,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Army.hpp" />
+    <ClInclude Include="Education.hpp" />
     <ClInclude Include="Job.hpp" />
     <ClInclude Include="Person.hpp" />
+    <ClInclude Include="PersonManager.hpp" />
     <ClInclude Include="Time.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

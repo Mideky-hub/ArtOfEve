@@ -10,9 +10,10 @@
 #include <boost/unordered_map.hpp>
 
 #include "Time.hpp"
-#include "Job.hpp"
+#include "Job.hpp"	
 #include "Social_Security.hpp"
-#include "Geography.hpp"
+#include "Geography.hpp"	//Call Army.hpp & Geography_dec.hpp
+#include "Education.hpp"
 
 enum class RelationType
 {
@@ -107,7 +108,8 @@ private:
 	std::vector<Job*> jobs;
 	const Social_Security_Number ssn;
 	Address address;
-	//things to add: address, phone number, email, 
+	//things to add: education, criminal record, medical record, phone number, email, etc.
+public:
 };
 
 __interface IFamily {

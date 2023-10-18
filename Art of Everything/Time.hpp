@@ -57,7 +57,18 @@ private:
 	Time time;
 	Date date;
 public:
-
+	virtual Time get_time() noexcept override {
+		return time;
+	}
+	virtual Date get_date() noexcept override {
+		return date;
+	}
+	virtual std::string get_time_string() const noexcept override {
+		return std::to_string(time.hour) + ":" + std::to_string(time.minute) + ":" + std::to_string(time.second);
+	}
+	virtual std::string get_date_string() const noexcept override {
+		return std::to_string(date.year) + "/" + std::to_string(date.month) + "/" + std::to_string(date.day);
+	}
 };
 
 

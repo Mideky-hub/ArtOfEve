@@ -44,5 +44,11 @@
     <ClInclude Include="Army.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="PersonManager.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Education.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
