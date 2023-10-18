@@ -2,6 +2,7 @@
 #define JOB_HPP
 
 #include <string>
+#include <iostream>
 #include <vector>
 
 enum JobType {
@@ -24,7 +25,7 @@ struct Skill {
 
 	Skill() = default;
 	Skill(const Skill& skill) : name(skill.name), level(skill.level) {}
-	Skill(std::string name, uint64_t level) : name(name), level(level) {}
+	Skill(std::string name, uint64_t& level) : name(name), level(level) {}
 	~Skill() {}
 };
 
@@ -56,7 +57,7 @@ class Job : public IJob {
 private:
 	const std::string name;
 	const std::string description;
-	const JobType type;
+	JobType type;
 	std::vector<Skill> r_skills;
 	Hierarchy hierarchy;
 	uint64_t salary;
@@ -72,8 +73,8 @@ public:
 	}
 
 	Job() = default;
-	Job(const Job&& job)
-		: name(std::move(job.name)), description(std::move(job.description)), r_skills(std::move(job.r_skills)),
+	Job(Job&& job) noexcept
+		: name(job.name), description(job.description), r_skills(std::move(job.r_skills)),
 		type(std::move(job.type)), hierarchy(std::move(job.hierarchy)), salary(std::move(job.salary)),
 		years_of_experience(std::move(job.years_of_experience)) {
 		try {
@@ -106,6 +107,15 @@ public:
 	virtual uint64_t get_yoe() const noexcept override { return this->years_of_experience; }
 };
 
+__interface IJObManager {
+public:
+	
+};
 
+class JobManager : public IJObManager {
+private:
+	
+public:
+};
 
 #endif // !JOB_HPP

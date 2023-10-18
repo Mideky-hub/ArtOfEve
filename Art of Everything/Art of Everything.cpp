@@ -1,5 +1,6 @@
 #include <iostream>
-#include "Job.hpp"
+#include "Person.hpp"
+
 
 int main(void)
 {

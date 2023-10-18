@@ -1,56 +1,83 @@
 #ifndef PERSON_HPP
 #define PERSON_HPP
 
+#include <memory>
 #include <string>
 #include <sstream>
+#include <vector>
+
+#include <boost/tuple/tuple.hpp>
+#include <boost/unordered_map.hpp>
+
 #include "Time.hpp"
 #include "Job.hpp"
+#include "Social_Security.hpp"
+#include "Geography.hpp"
 
-__interface ISocial_Security_Number {
-public:
-	virtual std::string get_ssn() const noexcept = 0;
-	virtual bool is_ssn_valid(std::string ssn) const noexcept = 0;
+enum class RelationType
+{
+	CoWorker,
+	Friend,
+	Classmate,
+	Roommate,
+	Neighbor,
+	Girlfriend,
+	Boyfriend,
+	Partner,
+	Fiance,
+	SpouseToBe,
+	ExSpouse,
+	ExGirlfriend,
+	ExBoyfriend,
+	ExPartner,
+	ExFiance,
+	Knows,
+	Superior,
+	Subordinate,
+	ExSpouseToBe,
+	Parent,
+	Child,
+	Spouse,
+	Grandparent,
+	Grandchild,
+	Sibling,
+	Cousin,
+	Aunt,
+	Uncle,
+	Nephew,
+	Niece,
+	StepParent,
+	StepChild,
+	StepSibling,
+	StepGrandparent,
+	StepGrandchild,
+	StepCousin,
+	StepAunt,
+	StepUncle,
+	StepNephew,
+	StepNiece,
+	AdoptiveParent,
+	AdoptiveChild,
+	AdoptiveSibling,
+	AdoptiveGrandparent,
+	AdoptiveGrandchild,
+	AdoptiveCousin,
+	AdoptiveAunt,
+	AdoptiveUncle,
+	AdoptiveNephew,
+	AdoptiveNiece,
+	AdoptiveStepParent,
+	AdoptiveStepChild,
+	AdoptiveStepSibling,
+	AdoptiveStepGrandparent,
+	AdoptiveStepGrandchild,
+	AdoptiveStepCousin,
+	AdoptiveStepAunt,
+	AdoptiveStepUncle,
+	AdoptiveStepNephew,
+	AdoptiveStepNiece,
+	Other
 };
-
-class Social_Security_Number : public ISocial_Security_Number {
-private:
-	const int gender;
-	const int year;
-	const int month;
-	const int area_code;
-	const int group_code;
-	const int serial_number;
-	Social_Security_Number(const Social_Security_Number&& ssn)
-		: gender(std::move(ssn.gender)), year(std::move(ssn.year)), month(std::move(ssn.month)), area_code(std::move(ssn.area_code)), group_code(std::move(ssn.group_code)), serial_number(std::move(ssn.serial_number)) {}
-public:
-	Social_Security_Number() = default;
-	Social_Security_Number(const int gender, const int year, const int month, const int area_code, const int group_code, const int serial_number) :
-		gender(gender), year(year), month(month), area_code(area_code), group_code(group_code), serial_number(serial_number) {}
-	~Social_Security_Number() {}
-
-	virtual std::string get_ssn() const noexcept override {
-		std::stringstream ssnStream;
-		ssnStream << gender << year << month << area_code << group_code << serial_number;
-		return ssnStream.str();
-	}
-
-	virtual bool is_ssn_valid(std::string ssn) const noexcept override {
-		if (ssn.length() != 9) {
-			return false;
-		}
-		for (int i = 0; i < ssn.length(); i++) {
-			if (!isdigit(ssn[i])) {
-				return false;
-			}
-		}
-		return true;
-	}
-
-	bool operator==(const Social_Security_Number& other) const noexcept {
-		return this->gender == other.gender && this->year == other.year && this->month == other.month && this->area_code == other.area_code && this->group_code == other.group_code && this->serial_number == other.serial_number;
-	}
-};
-
 
 struct Name {
 	const std::string name;
@@ -79,8 +106,30 @@ private:
 	uint64_t age;
 	std::vector<Job*> jobs;
 	const Social_Security_Number ssn;
-	
+	Address address;
 	//things to add: address, phone number, email, 
 };
+
+__interface IFamily {
+public:
+	
+};
+
+class Family : public IFamily {
+private:
+	boost::unordered_map<RelationType, std::vector<std::shared_ptr<Person>>> relations;
+	
+};
+
+__interface IPersonManager {
+public:
+	
+};
+
+class PersonManager : public IPersonManager {
+
+};
+
+
 
 #endif // !PERSON_HPP
