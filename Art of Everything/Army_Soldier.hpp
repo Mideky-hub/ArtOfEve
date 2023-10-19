@@ -2,7 +2,6 @@
 #define ARMY_SOLDIER_HPP
 
 #include "Person.hpp"
-#include "Army.hpp"
 
 namespace army_person {
 	__interface IMilitaryPerson : public IPerson {

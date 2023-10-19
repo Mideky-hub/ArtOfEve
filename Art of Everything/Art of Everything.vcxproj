@@ -129,10 +129,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Army.cpp" />
     <ClCompile Include="Army_Soldier.hpp" />
     <ClCompile Include="Art of Everything.cpp" />
+    <ClCompile Include="Geography.cpp" />
     <ClCompile Include="Geography.hpp" />
-    <ClCompile Include="Geography_dec.hpp" />
     <ClCompile Include="Social_Security.hpp" />
   </ItemGroup>
   <ItemGroup>

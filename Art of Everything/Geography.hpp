@@ -5,10 +5,9 @@
 #include <vector>
 #include <memory>
 
-#include <boost/tuple/tuple.hpp>
-
-#include "Army.hpp"
-#include "Geography_dec.hpp"
+struct Army;
+struct Country;
+struct State;
 
 enum Country_Relation {
 	Economic,
@@ -51,7 +50,7 @@ struct State {
 
 struct Ally {
 	std::shared_ptr<Country> country_name;
-	std::vector<boost::tuple<Country_Relation, int>> rel_level;
+	std::vector<std::tuple<Country_Relation, int>> rel_level;
 };
 
 struct Ennemy {
