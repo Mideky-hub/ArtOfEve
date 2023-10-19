@@ -129,11 +129,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Army_Soldier.hpp" />
     <ClCompile Include="Art of Everything.cpp" />
+    <ClCompile Include="Geography.hpp" />
+    <ClCompile Include="Geography_dec.hpp" />
+    <ClCompile Include="Social_Security.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Army.hpp" />
+    <ClInclude Include="Education.hpp" />
     <ClInclude Include="Job.hpp" />
     <ClInclude Include="Person.hpp" />
+    <ClInclude Include="PersonManager.hpp" />
     <ClInclude Include="Time.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

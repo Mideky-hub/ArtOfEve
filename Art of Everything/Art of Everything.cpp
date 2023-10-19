@@ -1,8 +1,9 @@
 #include <iostream>
-#include "Job.hpp"
+#include "Person.hpp"
+
 
 int main(void)
 {
-
+	Person p("John", "Doe", 20);
 	return 0;
 }
