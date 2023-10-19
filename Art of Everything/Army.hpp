@@ -1,46 +1,43 @@
 #ifndef ARMY_HPP
 #define ARMY_HPP
 
-template<typename T>
+#include <vector>
+
+struct Air_Soldier;
+
 __interface IArmy {
 public:
 	
 };
 
-template<typename T>
-__interface IGround_Army : public IArmy<T> {
+__interface IGround_Army : public IArmy {
 public:
 	
 };
 
-template<typename Ground_Soldier>
-class Ground_Army : public IGround_Army<Ground_Soldier> {
+class Ground_Army : public IGround_Army {
 
 };
 
-template<typename T>
-__interface IAir_Army : public IArmy<T> {
+__interface IAir_Army : public IArmy {
 public:
 
 };
 
-template<typename Air_Soldier>
-class Air_Army : public IAir_Army<Air_Soldier> {
+class Air_Army : public IAir_Army {
 private:
 	std::vector<Air_Soldier> soldiers;
 
 };
 
-template<typename T>
-__interface IAir_Army : public IArmy<T> {
-public:
-
-};
-
-template<typename Naval_Solider>
-class Naval_Army : public IAir_Army<Naval_Soldier> {
+class Naval_Army : public IAir_Army {
 private:
 	
+};
+
+struct Army
+{
+
 };
 
 #endif // !ARMY_HPP

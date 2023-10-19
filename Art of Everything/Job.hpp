@@ -1,6 +1,7 @@
 #ifndef JOB_HPP
 #define JOB_HPP
 
+#include <iostream>
 #include <string>
 #include <iostream>
 #include <vector>

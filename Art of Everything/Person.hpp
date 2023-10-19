@@ -5,9 +5,7 @@
 #include <string>
 #include <sstream>
 #include <vector>
-
-#include <boost/tuple/tuple.hpp>
-#include <boost/unordered_map.hpp>
+#include <unordered_map>
 
 #include "Time.hpp"
 #include "Job.hpp"	
@@ -114,18 +112,18 @@ public:
 
 __interface IFamily {
 public:
-	
+
 };
 
 class Family : public IFamily {
 private:
-	boost::unordered_map<RelationType, std::vector<std::shared_ptr<Person>>> relations;
-	
+	std::unordered_map<RelationType, std::vector<std::shared_ptr<Person>>> relations;
+
 };
 
 __interface IPersonManager {
 public:
-	
+
 };
 
 class PersonManager : public IPersonManager {
