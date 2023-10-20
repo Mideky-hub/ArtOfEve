@@ -9,76 +9,11 @@
 #include <boost/tuple/tuple.hpp>
 #include <boost/unordered_map.hpp>
 
-#include "Time.hpp"
-#include "Job.hpp"	
-#include "Social_Security.hpp"
-#include "Geography.hpp"	//Call Army.hpp & Geography_dec.hpp
-#include "Education.hpp"
-
-enum class RelationType
-{
-	CoWorker,
-	Friend,
-	Classmate,
-	Roommate,
-	Neighbor,
-	Girlfriend,
-	Boyfriend,
-	Partner,
-	Fiance,
-	SpouseToBe,
-	ExSpouse,
-	ExGirlfriend,
-	ExBoyfriend,
-	ExPartner,
-	ExFiance,
-	Knows,
-	Superior,
-	Subordinate,
-	ExSpouseToBe,
-	Parent,
-	Child,
-	Spouse,
-	Grandparent,
-	Grandchild,
-	Sibling,
-	Cousin,
-	Aunt,
-	Uncle,
-	Nephew,
-	Niece,
-	StepParent,
-	StepChild,
-	StepSibling,
-	StepGrandparent,
-	StepGrandchild,
-	StepCousin,
-	StepAunt,
-	StepUncle,
-	StepNephew,
-	StepNiece,
-	AdoptiveParent,
-	AdoptiveChild,
-	AdoptiveSibling,
-	AdoptiveGrandparent,
-	AdoptiveGrandchild,
-	AdoptiveCousin,
-	AdoptiveAunt,
-	AdoptiveUncle,
-	AdoptiveNephew,
-	AdoptiveNiece,
-	AdoptiveStepParent,
-	AdoptiveStepChild,
-	AdoptiveStepSibling,
-	AdoptiveStepGrandparent,
-	AdoptiveStepGrandchild,
-	AdoptiveStepCousin,
-	AdoptiveStepAunt,
-	AdoptiveStepUncle,
-	AdoptiveStepNephew,
-	AdoptiveStepNiece,
-	Other
-};
+#include "Time.hpp" // Single depedency
+#include "Job.hpp" // Single depedency
+#include "Social_Security.hpp"	// Single depedency
+#include "Location.hpp"	// Country.hpp -> Country_dec.hpp
+#include "Education.hpp" // Single depedency
 
 struct Name {
 	const std::string name;
@@ -105,33 +40,11 @@ private:
 	Name name;
 	Date date_of_birth;
 	uint64_t age;
-	std::vector<Job*> jobs;
+	std::vector<std::shared_ptr<Job>> jobs;
 	const Social_Security_Number ssn;
 	Address address;
 	//things to add: education, criminal record, medical record, phone number, email, etc.
 public:
 };
-
-__interface IFamily {
-public:
-	
-};
-
-class Family : public IFamily {
-private:
-	boost::unordered_map<RelationType, std::vector<std::shared_ptr<Person>>> relations;
-	
-};
-
-__interface IPersonManager {
-public:
-	
-};
-
-class PersonManager : public IPersonManager {
-
-};
-
-
 
 #endif // !PERSON_HPP

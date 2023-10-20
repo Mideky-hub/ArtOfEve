@@ -18,16 +18,16 @@
     <ClCompile Include="Art of Everything.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Geography.hpp">
+    <ClCompile Include="Country.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClCompile>
     <ClCompile Include="Social_Security.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClCompile>
-    <ClCompile Include="Geography_dec.hpp">
+    <ClCompile Include="Country_dec.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClCompile>
-    <ClCompile Include="Army_Soldier.hpp">
+    <ClCompile Include="CountryManager.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClCompile>
   </ItemGroup>
@@ -50,5 +50,28 @@
     <ClInclude Include="Education.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="CountryRelation.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Location.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Family.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Hierarchy.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Soldier.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Civilian.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PersonRelation.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </None>
   </ItemGroup>
 </Project>

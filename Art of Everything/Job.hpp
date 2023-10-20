@@ -5,19 +5,13 @@
 #include <iostream>
 #include <vector>
 
+#include "Hierarchy.hpp"
+
 enum JobType {
 	FullTime,
 	PartTime,
 	Contract
 };
-
-enum Hierarchical_position {
-	Employee,
-	Manager,
-	Executive,
-	CEO
-};
-
 
 struct Skill {
 	const std::string name;
@@ -27,19 +21,6 @@ struct Skill {
 	Skill(const Skill& skill) : name(skill.name), level(skill.level) {}
 	Skill(std::string name, uint64_t& level) : name(name), level(level) {}
 	~Skill() {}
-};
-
-struct Hierarchy {
-	Hierarchical_position position;
-	std::vector<Hierarchy*> superiors;
-
-	Hierarchy() = default;
-	Hierarchy(const Hierarchy& hierarchy) : position(hierarchy.position), superiors(hierarchy.superiors) {}
-	Hierarchy(Hierarchical_position position) : position(position) {
-		this->superiors = std::vector<Hierarchy*>();
-	}
-	Hierarchy(Hierarchical_position position, std::vector<Hierarchy*> superiors) : position(position), superiors(superiors) {}
-	~Hierarchy() {}
 };
 
 __interface IJob {
