@@ -4,6 +4,8 @@
 #include <boost/unordered_map.hpp>
 #include <vector>
 
+#include "PersonManager.hpp"
+
 __interface IFamily {
 public:
 

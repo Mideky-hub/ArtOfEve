@@ -76,6 +76,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -129,23 +130,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="3d_math_concepts.hpp" />
     <ClCompile Include="Art of Everything.cpp" />
     <ClCompile Include="CountryManager.hpp" />
     <ClCompile Include="Country.hpp" />
     <ClCompile Include="Country_dec.hpp" />
+    <ClCompile Include="RigidBody3DSim.hpp" />
     <ClCompile Include="Social_Security.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AirInfantery.hpp" />
+    <ClInclude Include="Airplane.hpp" />
+    <ClInclude Include="Application.hpp" />
     <ClInclude Include="Army.hpp" />
+    <ClInclude Include="boost_tuple.hpp" />
     <ClInclude Include="Civilian.hpp" />
     <ClInclude Include="CountryRelation.hpp" />
+    <ClInclude Include="data.hpp" />
+    <ClInclude Include="Degree.hpp" />
     <ClInclude Include="Education.hpp" />
     <ClInclude Include="Family.hpp" />
     <ClInclude Include="Hierarchy.hpp" />
+    <ClInclude Include="Infantery.hpp" />
     <ClInclude Include="Job.hpp" />
     <ClInclude Include="Location.hpp" />
     <ClInclude Include="Person.hpp" />
     <ClInclude Include="PersonManager.hpp" />
+    <ClInclude Include="Singleton.hpp" />
     <ClInclude Include="Soldier.hpp" />
     <ClInclude Include="Time.hpp" />
   </ItemGroup>

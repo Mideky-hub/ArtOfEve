@@ -4,12 +4,12 @@
 #include "Soldier.hpp"
 #include "Civilian.hpp"
 
-__interface IPersonManager {
+__interface IPersonManager : public IPerson, public ISoldier {
 public:
 
 };
 
-class PersonManager : public IPersonManager {
+class PersonManager : public IPersonManager, public Person, public Soldier {
 private:
 
 };
